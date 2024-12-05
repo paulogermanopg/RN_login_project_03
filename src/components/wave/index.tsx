@@ -1,6 +1,5 @@
 import React from 'react';
 import {
-  Canvas,
   Skia,
   Path,
   vec,
@@ -13,12 +12,13 @@ import {
   withRepeat,
   withTiming,
 } from 'react-native-reanimated';
-import {Dimensions, StyleSheet, View} from 'react-native';
+import {Dimensions} from 'react-native';
+import {CanvasStyled, Container} from './styles';
 
 const {width, height} = Dimensions.get('window');
-const frequency = 2;
-const amplitude = 12;
-const verticalOffset = 200; // Altura base da onda
+const frequency: number = 2;
+const amplitude: number = 12;
+const verticalOffset: number = 200; // Altura base da onda
 
 export default function AnimatedWave() {
   const phase = useSharedValue(0); // Fase da onda
@@ -51,8 +51,8 @@ export default function AnimatedWave() {
   }, [phase]);
 
   return (
-    <View style={styles.container}>
-      <Canvas style={styles.canvas}>
+    <Container>
+      <CanvasStyled>
         <Path path={animatedPath} style="fill">
           <LinearGradient
             start={vec(0, verticalOffset)}
@@ -60,17 +60,7 @@ export default function AnimatedWave() {
             colors={['#00B3B3', '#0000B3']}
           />
         </Path>
-      </Canvas>
-    </View>
+      </CanvasStyled>
+    </Container>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-  },
-  canvas: {
-    flex: 1,
-  },
-});
