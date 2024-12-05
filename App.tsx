@@ -1,8 +1,26 @@
-import { Canvas } from '@shopify/react-native-skia';
-import { useSharedValue } from 'react-native-reanimated';
+import {
+  Canvas,
+  useClock,
+  Skia,
+  Path,
+  vec,
+  LinearGradient,
+} from '@shopify/react-native-skia';
+import {
+  useSharedValue,
+  useDerivedValue,
+  runOnUI,
+} from 'react-native-reanimated';
+import {curveBasis, line} from 'd3';
 import React from 'react';
-import { StatusBar, View, StyleSheet, Dimensions, ScaledSize } from 'react-native';
-
+import {
+  StatusBar,
+  View,
+  StyleSheet,
+  Dimensions,
+  ScaledSize,
+} from 'react-native';
+import WaveTest from './src/waveTest';
 
 const dimension: ScaledSize = Dimensions.get('window');
 const width: number = dimension.width;
@@ -11,28 +29,13 @@ const frequency: number = 2;
 const initialAmplitude: number = 10;
 const initialVerticalOffset: number = 100;
 
-export default function App(){
-  const verticalOffset = useSharedValue(initialVerticalOffset);
-  const amplitude = useSharedValue(initialAmplitude);
-
-  const createWavePath = (phase: number = 20) => {
-
-  };
-
-  return(
-    <View style={styles.container}>
-      <Canvas style={styles.canvas}>
-
-      </Canvas>
-    </View>
-  );
+export default function App() {
+  return <WaveTest />;
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
     backgroundColor: '#fff',
   },
   canvas: {
