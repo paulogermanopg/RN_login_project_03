@@ -13,7 +13,8 @@ import {
   withTiming,
 } from 'react-native-reanimated';
 import {Dimensions} from 'react-native';
-import {CanvasStyled, Container} from './styles';
+import * as S from './styles';
+import Sky from '../sky';
 
 const {width, height} = Dimensions.get('window');
 const frequency: number = 2;
@@ -51,16 +52,17 @@ export default function AnimatedWave() {
   }, [phase]);
 
   return (
-    <Container>
-      <CanvasStyled>
+    <S.Container>
+      <Sky />
+      <S.CanvasStyled>
         <Path path={animatedPath} style="fill">
           <LinearGradient
             start={vec(0, verticalOffset)}
             end={vec(0, verticalOffset + 300)}
-            colors={['#00B3B3', '#0000B3']}
+            colors={['#00B3B3', '#0000B3', '#000050']}
           />
         </Path>
-      </CanvasStyled>
-    </Container>
+      </S.CanvasStyled>
+    </S.Container>
   );
 }
