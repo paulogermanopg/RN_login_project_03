@@ -2,7 +2,6 @@ import React from 'react';
 import * as S from './styles';
 
 export default function Sky() {
-  // Função para gerar estrelas em posições aleatórias
   const generateStars = () => {
     let stars = [];
     for (let i = 0; i < 120; i++) {
