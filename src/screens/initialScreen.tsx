@@ -1,8 +1,10 @@
 import React from 'react';
-import {Container} from './styles';
+
 import Wave from '../components/wave';
 import SingIn from '../components/login';
 import Fishes from '../components/fishes';
+
+import {Container} from './styles';
 
 export default function InitialScreen() {
   return (

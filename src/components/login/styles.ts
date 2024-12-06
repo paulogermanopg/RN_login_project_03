@@ -1,5 +1,6 @@
 import styled from 'styled-components/native';
 import * as Animatable from 'react-native-animatable';
+import COLORS from '../../utils/colorUtils';
 
 export const Container = styled.View`
     flex: 1;
@@ -15,7 +16,7 @@ export const FormContainer = styled(Animatable.View)`
 export const FormTitle = styled.Text`
     font-size: 20px;
     margin-top: 28px;
-    color: #fff;
+    color: ${COLORS.WHITE};
     font-family: RumRaisin-Regular;
     letter-spacing: 2px;
 `;
@@ -23,7 +24,7 @@ export const FormTitle = styled.Text`
 export const FormInput = styled.TextInput`
     width: 100%;
     font-size: 16px;
-    color: #FFF;
+    color: ${COLORS.WHITE};
     font-weight: 500;
 `;
 
@@ -32,11 +33,11 @@ export const InputContainer = styled.View`
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    border: 1.3px solid #ccc;
+    border: 1.3px solid ${COLORS.GRAY_LIGHT};
     border-radius: 16px;
     padding: 10px;
     margin-top: 2px;
-    background-color: #00B3B390;
+    background-color: ${COLORS.CYAN_OPACITY};
 `;
 
 export const ToggleButton = styled.TouchableOpacity`
@@ -46,7 +47,7 @@ export const ToggleButton = styled.TouchableOpacity`
 `;
 
 export const AcessButton = styled.TouchableOpacity`
-    background-color: #489cbd;
+    background-color: ${COLORS.BLUE_TROPIC};
     width: 100%;
     border-radius: 16px;
     padding-top: 8px;
@@ -58,7 +59,7 @@ export const AcessButton = styled.TouchableOpacity`
 
 export const ButtonText = styled.Text`
     font-size: 18px;
-    color: #FFF;
+    color: ${COLORS.WHITE};
     font-family: RumRaisin-Regular;
     letter-spacing: 2px;
 `;
@@ -70,6 +71,6 @@ export const RegisterButton = styled.TouchableOpacity`
 
 export const RegisterButtonText = styled.Text`
     font-size: 14px;
-    color: #ccc;
+    color: ${COLORS.GRAY_LIGHT};
     font-weight: bold;
 `;

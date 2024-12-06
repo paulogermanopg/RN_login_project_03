@@ -1,10 +1,6 @@
 import React from 'react';
-import {
-  Skia,
-  Path,
-  vec,
-  LinearGradient,
-} from '@shopify/react-native-skia';
+import {Dimensions} from 'react-native';
+import {Skia, Path, vec, LinearGradient} from '@shopify/react-native-skia';
 import {
   useSharedValue,
   useDerivedValue,
@@ -12,9 +8,11 @@ import {
   withRepeat,
   withTiming,
 } from 'react-native-reanimated';
-import {Dimensions} from 'react-native';
-import * as S from './styles';
+
 import Sky from '../sky';
+
+import * as S from './styles';
+import COLORS from '../../utils/colorUtils';
 
 const {width, height} = Dimensions.get('window');
 const frequency: number = 2;
@@ -59,7 +57,11 @@ export default function AnimatedWave() {
           <LinearGradient
             start={vec(0, verticalOffset)}
             end={vec(0, verticalOffset + 300)}
-            colors={['#00B3B3', '#0000B3', '#000050']}
+            colors={[
+              COLORS.GRADIENT_CYAN_MEDIUM,
+              COLORS.GRADIENT_BLUE_VIVID_DARK,
+              COLORS.GRADIENT_BLUE_NAVY_DARK,
+            ]}
           />
         </Path>
       </S.CanvasStyled>

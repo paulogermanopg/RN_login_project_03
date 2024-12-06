@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import Icon from 'react-native-vector-icons/Ionicons';
 import * as S from './styles';
+import COLORS from '../../utils/colorUtils';
 
 export default function SingIn() {
   const [email, setEmail] = useState<string>('');
@@ -13,13 +14,13 @@ export default function SingIn() {
 
   return (
     <S.Container>
-      <S.FormContainer animation="fadeInUp"  delay={700}>
+      <S.FormContainer animation="fadeInUp" delay={800}>
         <S.FormTitle>E-mail</S.FormTitle>
 
         <S.InputContainer>
           <S.FormInput
             placeholder="Digite o seu e-mail"
-            placeholderTextColor="#ccc"
+            placeholderTextColor={COLORS.GRAY_LIGHT}
             onChangeText={setEmail}
           />
         </S.InputContainer>
@@ -29,7 +30,7 @@ export default function SingIn() {
         <S.InputContainer>
           <S.FormInput
             placeholder="Digite a sua senha"
-            placeholderTextColor="#ccc"
+            placeholderTextColor={COLORS.GRAY_LIGHT}
             secureTextEntry={secureEntry}
             onChangeText={setPassword}
           />
@@ -38,7 +39,7 @@ export default function SingIn() {
             <Icon
               name={secureEntry ? 'eye-off' : 'eye'}
               size={24}
-              color="#ccc"
+              color={COLORS.GRAY_LIGHT}
             />
           </S.ToggleButton>
         </S.InputContainer>

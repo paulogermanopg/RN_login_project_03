@@ -1,0 +1,14 @@
+export default {
+    WHITE: '#FFF',
+    BLACK: '#000',
+    SKY_BLACK_PEARL: '#001d29',
+    MOON_IVORY: '#fdf6e3',
+    MOONLIGHT: '#FFFFC859',
+    MOON_SAND_LIGHT: '#d9d3b3',
+    GRADIENT_CYAN_MEDIUM: '#00B3B3',
+    GRADIENT_BLUE_VIVID_DARK: '#0000B3',
+    GRADIENT_BLUE_NAVY_DARK: '#000050',
+    GRAY_LIGHT: '#ccc',
+    CYAN_OPACITY: '#00B3B390',
+    BLUE_TROPIC: '#489cbd',
+};
